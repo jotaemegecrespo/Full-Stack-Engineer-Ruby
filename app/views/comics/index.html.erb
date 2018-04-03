@@ -5,8 +5,9 @@
 
 <div class="comics">
   <% @search.comics.each do |comic| %>
-    <div class="comic">
+    <div class="comic<%= session[:favourites]&.include?( comic.id.to_s) ? ' favourite' : '' %>">
       <%= image_tag comic.image_url %>
+      <%= link_to '', comic_fav_path(comic.id), class: "fav#{session[:favourites]&.dig(comic.id.to_s) ? ' favourite' : ''}" %>
     </div>
   <% end %>
 

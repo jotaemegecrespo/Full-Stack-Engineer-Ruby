@@ -20,6 +20,7 @@ $content-width: 900px;
     justify-content: space-around;
     background: red;
     opacity: 0.85;
+    z-index: 1;
 
     input {
       height: 2em;
@@ -35,13 +36,40 @@ $content-width: 900px;
     padding-bottom: 2em;
 
     .comic {
-      flex-basis: 19%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1.5em;
+      position: relative;
+      margin: 0.5em;
+      border: solid 2px black;
+
+      &:hover {
+        border: solid 2px red;
+      }
+
+      .fav {
+        background: image-url('heart_off.png');
+        width: 30px;
+        height: 27px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+
+        &:hover {
+          background: image-url('heart_hover.png');
+        }
+
+        &.favourite {
+          background: image-url('heart_on.png');
+          width: 36px;
+          height: 32px;
+          top: 0;
+          right: 4px;
+        }
+      }
 
       img {
         box-shadow: 5px 10px 10px;
+        &:hover {
+          opacity: 0.4;
+        }
       }
     }
 
