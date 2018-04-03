@@ -11,8 +11,9 @@ class Marvel::Client
   def initialize path, options = {}
     @path = path
     @parameters = options.delete(:query) { {} }
+
     @options = options
-    @options.merge(debug_output: $stdout) if DEBUG
+    @options.merge!(debug_output: $stdout) if DEBUG
   end
 
   def get

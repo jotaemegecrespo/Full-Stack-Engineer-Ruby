@@ -1,0 +1,72 @@
+$search-height: 150px;
+$content-width: 900px;
+
+.content {
+  width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0,0,0,0.85);
+  height: 700px;
+  overflow-y: scroll;
+  padding: 0 1em;
+
+  .search {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $content-width;
+    height: $search-height;
+    justify-content: space-around;
+    background: red;
+    opacity: 0.85;
+
+    input {
+      height: 2em;
+      width: 30em;
+    }
+  }
+
+  .comics {
+    padding-top: $search-height;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 2em;
+
+    .comic {
+      flex-basis: 19%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5em;
+
+      img {
+        box-shadow: 5px 10px 10px;
+      }
+    }
+
+    .actions {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  a {
+    display: block;
+    text-transform: uppercase;
+    color: red;
+    background: white;
+    width: 10em;
+    line-height: 2em;
+    text-align: center;
+    bottom: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+
+    &.disabled { 
+      opacity: 0.7;
+    }
+  }
+}
