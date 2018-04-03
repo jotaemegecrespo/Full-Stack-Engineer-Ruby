@@ -1,6 +1,6 @@
 <div class="search">
   <%= image_tag 'marvel_logo.png' %>
-  <input type="text">
+  <input type="text"/ value="<%= @character %>">
 </div>
 
 <div class="comics">
@@ -11,8 +11,7 @@
   <% end %>
 
   <div class="actions">
-    <%= link_to 'Previous Page', comics_path(page: @search.previous_page), class: "previous #{@search.previous_page.present? ? '' : 'disabled'}" %>
-    <%= link_to 'Next Page', comics_path(page: @search.next_page), class: "next #{@search.next_page.present? ? '' : 'disabled'}"%>
-
+    <%= link_to 'Previous Page', comics_path(page: @search.previous_page, character: @character), class: "previous #{@search.previous_page.present? ? '' : 'disabled'}" %>
+    <%= link_to 'Next Page', comics_path(page: @search.next_page, character: @character), class: "next #{@search.next_page.present? ? '' : 'disabled'}"%>
   </div>
 </div>

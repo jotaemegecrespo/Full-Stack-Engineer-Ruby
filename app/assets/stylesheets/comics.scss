@@ -28,7 +28,7 @@ $content-width: 900px;
   }
 
   .comics {
-    padding-top: $search-height;
+    padding-top: calc(#{$search-height} + 1em);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
